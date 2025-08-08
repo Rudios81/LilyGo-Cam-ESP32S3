@@ -17,15 +17,14 @@
 #include "utilities.h"
 
 
-void        startCameraServer();
+void startCameraServer();
 
-XPowersPMU  PMU;
-WiFiMulti   wifiMulti;
+XPowersPMU PMU;
+WiFiMulti wifiMulti;
 
 
 void setup()
 {
-
     Serial.begin(115200);
 
     //Start while waiting for Serial monitoring
@@ -56,11 +55,9 @@ void setup()
     // TS Pin detection must be disable, otherwise it cannot be charged
     PMU.disableTSPinMeasure();
 
-
     /*********************************
      * step 2 : start network
     ***********************************/
-
     wifiMulti.addAP(WIFI_SSID1, WIFI_SSID_PASSWORD1);
     wifiMulti.addAP(WIFI_SSID2, WIFI_SSID_PASSWORD1);
     wifiMulti.addAP(WIFI_SSID3, WIFI_SSID_PASSWORD1);
@@ -74,7 +71,6 @@ void setup()
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
-
 
     /*********************************
      *  step 3 : Initialize camera
@@ -153,8 +149,6 @@ void setup()
     s->set_vflip(s, 1);
     s->set_hmirror(s, 1);
 #endif
-
-
 
     /*********************************
      *  step 4 : start camera web server

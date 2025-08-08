@@ -117,13 +117,11 @@ bool setupCameraTask(const QueueHandle_t frame_o)
     return false;
 }
 
-
 void nextFrameSize()
 {
     frameSize++;
-    frameSize %= FRAMESIZE_HD;
-    if (frameSize == FRAMESIZE_96X96 ) {
-        frameSize = FRAMESIZE_QVGA;
+    if (frameSize > MAX_FRAMESIZE) {
+        frameSize = MIN_FRAMESIZE;
     }
     Serial.printf("set frame size = %u\n", frameSize);
     sensor_t *sensor = esp_camera_sensor_get();

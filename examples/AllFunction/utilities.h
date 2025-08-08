@@ -15,8 +15,11 @@
 
 
 // Set this to true if using AP mode
-#define USING_AP_MODE       true
+#define USING_AP_MODE       false
 
+// Set the maximum framesize for the camera
+#define MIN_FRAMESIZE       FRAMESIZE_96X96
+#define MAX_FRAMESIZE       FRAMESIZE_FHD
 
 // ===================
 // Pins

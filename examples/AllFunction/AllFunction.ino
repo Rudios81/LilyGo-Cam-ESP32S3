@@ -6,7 +6,6 @@
  * @date      2022-09-16
  *
  */
-
 #include "screen.h"
 #include "camera.h"
 #include "button.h"

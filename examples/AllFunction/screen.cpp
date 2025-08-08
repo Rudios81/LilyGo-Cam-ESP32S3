@@ -58,7 +58,6 @@ void drawScrollString(int16_t offset, const char *s)
     }
 }
 
-
 void screenTimerCallback(TimerHandle_t timer)
 {
     if (off_cb) {
@@ -106,7 +105,6 @@ void setupScreen(screen_off_cb_t cb, bool camera)
         delay(5000);
     }
 }
-
 
 void startScreenTimer()
 {

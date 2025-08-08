@@ -20,6 +20,8 @@
 #include "sdkconfig.h"
 #include "camera_index.h"
 
+static bool OWN_HTML = 1;
+
 #if defined(ARDUINO_ARCH_ESP32) && defined(CONFIG_ARDUHAL_ESP_LOG)
 #include "esp32-hal-log.h"
 #define TAG ""
@@ -1142,12 +1144,16 @@ static esp_err_t index_handler(httpd_req_t *req)
     httpd_resp_set_hdr(req, "Content-Encoding", "gzip");
     sensor_t *s = esp_camera_sensor_get();
     if (s != NULL) {
-        if (s->id.PID == OV3660_PID) {
-            return httpd_resp_send(req, (const char *)index_ov3660_html_gz, index_ov3660_html_gz_len);
-        } else if (s->id.PID == OV5640_PID) {
-            return httpd_resp_send(req, (const char *)index_ov5640_html_gz, index_ov5640_html_gz_len);
+        if (OWN_HTML) {
+            return httpd_resp_send(req, (const char *)index_ov5640_ruud_html_gz, index_ov5640_ruud_html_gz_len);
         } else {
-            return httpd_resp_send(req, (const char *)index_ov2640_html_gz, index_ov2640_html_gz_len);
+            if (s->id.PID == OV3660_PID) {
+                return httpd_resp_send(req, (const char *)index_ov3660_html_gz, index_ov3660_html_gz_len);
+            } else if (s->id.PID == OV5640_PID) {
+                return httpd_resp_send(req, (const char *)index_ov5640_html_gz, index_ov5640_html_gz_len);
+            } else {
+                return httpd_resp_send(req, (const char *)index_ov2640_html_gz, index_ov2640_html_gz_len);
+            }       
         }
     } else {
         ESP_LOGE(TAG, "Camera sensor not found");

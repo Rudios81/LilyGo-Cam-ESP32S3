@@ -86,7 +86,6 @@ void WiFiEvent(WiFiEvent_t event)
     }
 }
 
-
 void setupNetwork(bool setup_AP_Mode)
 {
     isAP = setup_AP_Mode;
@@ -128,7 +127,6 @@ void loopNetwork()
         wifiMulti.run();
     }
 }
-
 
 String getIpAddress()
 {

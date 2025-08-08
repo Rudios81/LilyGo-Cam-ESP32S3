@@ -9,10 +9,5 @@
 
 #pragma once
 
-
-
 void setupButton();
 void loopButton();
-
-
-
