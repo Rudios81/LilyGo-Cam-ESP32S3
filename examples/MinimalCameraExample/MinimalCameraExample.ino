@@ -16,7 +16,6 @@
 #include "XPowersLib.h"
 #include "utilities.h"
 
-
 void        startCameraServer();
 
 XPowersPMU  PMU;
@@ -25,11 +24,8 @@ String      hostName = "LilyGo-Cam-";
 String      ipAddress = "";
 bool        use_ap_mode = true;
 
-
-
 void setup()
 {
-
     Serial.begin(115200);
 
     //Start while waiting for Serial monitoring
@@ -59,7 +55,6 @@ void setup()
 
     // TS Pin detection must be disable, otherwise it cannot be charged
     PMU.disableTSPinMeasure();
-
 
     /*********************************
      * step 2 : start network

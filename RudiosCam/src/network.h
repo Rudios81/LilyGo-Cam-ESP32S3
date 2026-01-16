@@ -1,5 +1,5 @@
 /**
- * @file      server.h
+ * @file      network.h
  * @author    Lewis He (lewishe@outlook.com)
  * @license   MIT
  * @copyright Copyright (c) 2022  Shenzhen Xin Yuan Electronic Technology Co., Ltd
@@ -9,5 +9,6 @@
 
 #pragma once
 
-void setupServer();
-void loopServer();
+void setupNetwork(bool setup_AP_Mode);
+void loopNetwork();
+String getIpAddress();

@@ -67,7 +67,7 @@ void WiFiEvent(WiFiEvent_t event)
         networkReady = true;
         break;
     case ARDUINO_EVENT_WIFI_AP_STOP:
-        Serial.println("WiFi access point  stopped");
+        Serial.println("WiFi access point stopped");
         networkReady = false;
         break;
     case ARDUINO_EVENT_WIFI_AP_STACONNECTED:

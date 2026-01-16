@@ -13,10 +13,8 @@
 // ===================
 #define LILYGO_ESP32S3_CAM_PIR_VOICE // Has PSRAM
 
-
 // Set this to true if using AP mode
 #define USING_AP_MODE       true
-
 
 // ===================
 // Pins
@@ -28,7 +26,6 @@
 #ifdef I2C_SCL
 #undef I2C_SCL
 #endif
-
 
 #if defined(LILYGO_ESP32S3_CAM_PIR_VOICE)
 
@@ -68,10 +65,7 @@
 #define USER_BUTTON_PIN             (0)
 #define BUTTON_ARRAY                {USER_BUTTON_PIN}
 
-
-
 #elif defined(LILYGO_ESP32S3_CAM_SIM7080G)
-
 
 #define PWDN_GPIO_NUM               (-1)
 #define RESET_GPIO_NUM              (18)
@@ -106,7 +100,6 @@
 #define BOARD_MODEM_TXD_PIN         (5)
 
 #define USING_MODEM
-
 
 #else
 #error "Camera model not selected"

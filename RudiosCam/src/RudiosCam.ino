@@ -14,6 +14,7 @@
 #include "server.h"
 #include "utilities.h"
 #include "esp_camera.h"
+#include <EEPROM.h>
 
 void startCameraServer();
 void setupVoiceWakeup();
@@ -76,6 +77,7 @@ void setup()
     recVoice = xQueueCreate(2, sizeof(uint8_t));
 
     Serial.begin(115200);
+    EEPROM.begin(EEPROM_SIZE);
 
     getWakeupReason();
 

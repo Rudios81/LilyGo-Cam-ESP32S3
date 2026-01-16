@@ -27,9 +27,3 @@ void loopScreen(LilyGoTrigger trigger);
 void setScreenStatus(bool en);
 void resetScreenTimer();
 void startScreenTimer();
-
-
-
-
-
-
