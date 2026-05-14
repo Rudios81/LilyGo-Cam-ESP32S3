@@ -37,7 +37,7 @@ examples examples
 
 1. Install [Arduino IDE](https://www.arduino.cc/en/software)
 2. Install [Arduino ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/), **ESP32 core version should be lower than V 3.0.0, 2.0.17 is recommended**
-3. Copy all the folders in the `LilyGo-Cam-ESP32S3/lib` directory to `<C:\Users\UserName\Documents\Arduino\libraries>`. If there is no `libraries` directory, please create a new one. Please note that you are not copying the `lib` directory, but copying the folders in the lib directory
+3. Copy all the folders in the `LilyGo-Cam-ESP32S3/lib` directory to `<C:\Users\%USERNAME%\Documents\Arduino\libraries>`. If there is no `libraries` directory, please create a new one. Please note that you are not copying the `lib` directory, but copying the folders in the lib directory
 4. Open ArduinoIDE -> Tools
    - Board -> ESP32S3 Dev Module
    - USB CDC On Boot -> Enable  ## Note that you need to change Enable to Disable when USB is not connected, so USB CDC will not prevent the board from starting
@@ -79,7 +79,7 @@ Please enter the upload mode manually.
     1. Release the BOOT button
     1. Upload sketch
 12. How to use ESPHome?
-    - [t-camera-s3.yaml](https://github.com/Xinyuan-LilyGO/LilyGo-Camera-Series/blob/master/esphome/t-camera-s3.yaml) Contributed by @Joop ，For discussion and usage see [issue](https://github.com/esphome/issues/issues/4168)
+    - [esphome](https://github.com/Xinyuan-LilyGO/LilyGo-Cam-ESP32S3/tree/master/esphome)
 
 ## 4️⃣ Pins:
 
@@ -103,3 +103,16 @@ Please enter the upload mode manually.
 | PMU Channel | Microphone | OLED/ESP32S3 | Camera            | Pir   |
 | ----------- | ---------- | ------------ | ----------------- | ----- |
 |             | BLDO1      | DCDC1        | ALDO1/ALDO2/ALDO4 | ALDO3 |
+
+## Free IO
+
+| GPIO | Valid                                |
+| ---- | ------------------------------------ |
+| 35   | ❌ Unavailable, internal PSRAM in use |
+| 36   | ❌ Unavailable, internal PSRAM in use |
+| 37   | ❌ Unavailable, internal PSRAM in use |
+| 15   | ✅                                    |
+| 16   | ✅                                    |
+| 45   | ✅                                    |
+| 3    | ✅                                    |
+| 46   | ✅                                    |
